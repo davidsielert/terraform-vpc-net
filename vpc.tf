@@ -69,7 +69,7 @@ resource "aws_route_table_association" "public" {
   count = var.public_network_count
 }
 resource "aws_route_table_association" "data" {
-  route_table_id = aws_route_table.public.id
+  route_table_id = aws_route_table.data.id
   subnet_id = aws_subnet.data[count.index].id
   count = var.data_network_count
 }
